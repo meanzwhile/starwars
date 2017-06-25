@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>starwars login</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+        
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" defer></script>
+    </head>
+    <body>
+        <div id="header-top">
+            <button class="header-button"><a href="/">Back</a></button>
+        </div>
+        <div class="log-page">
+            <form action="login" method="POST">
+                Username <input type="text" name="logname">
+                Password <input type="password" name="logpass">
+                <button type="submit">Log In</button>
+            </form>
+        {% if wrong_pass %}            
+        <span>Wrong username or password</span>
+        {% endif %}
+        </div>
+    </body>
+</html>
